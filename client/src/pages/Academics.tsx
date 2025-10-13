@@ -6,29 +6,39 @@ import { GraduationCap, Briefcase } from "lucide-react";
 export default function Academics() {
   const education = [
     {
-      degree: "Ph.D. in Computer Science",
-      institution: "R.M.K. Engineering College",
-      year: "2018",
+      degree: "Ph.D. (Computer Science & Engineering)",
+      institution: "Anna University",
+      year: "May 2021",
     },
     {
-      degree: "M.E. in Computer Science",
-      institution: "Anna University",
-      year: "2012",
+      degree: "M.E (Computer Science & Engineering)",
+      institution: "Vel Tech Engineering College, Anna University",
+      year: "2007 - 2009",
+    },
+    {
+      degree: "B.E (Computer Science & Engineering)",
+      institution: "L.C.R College of Engineering & Technology, Anna University",
+      year: "2003 - 2006",
+    },
+    {
+      degree: "Diploma (Computer Science & Engineering)",
+      institution: "John Bosco Polytechnic College, Directorate of Technical Education",
+      year: "2000 - 2003",
     },
   ];
 
   const experience = [
     {
-      position: "Associate Professor",
-      institution: "R.M.K. Engineering College",
-      department: "Department of Computer Science and Engineering",
-      period: "2015 - Present",
+      position: "Research Professor",
+      institution: "Gyeongsang National University",
+      department: "Brain Pool Fellowship funded by National Research Foundation, South Korea",
+      period: "2023 - 2024",
     },
     {
-      position: "Assistant Professor",
-      institution: "R.M.K. Engineering College",
-      department: "Department of Computer Science and Engineering",
-      period: "2012 - 2015",
+      position: "Brain Pool Fellowship",
+      institution: "Hanyang University",
+      department: "",
+      period: "2023 - 2024",
     },
   ];
 
@@ -67,7 +77,7 @@ export default function Academics() {
                 <Card key={index} className="p-6 hover-elevate" data-testid={`card-experience-${index}`}>
                   <h3 className="text-xl font-semibold mb-2">{exp.position}</h3>
                   <p className="text-muted-foreground">{exp.institution}</p>
-                  <p className="text-sm text-muted-foreground">{exp.department}</p>
+                  {exp.department && <p className="text-sm text-muted-foreground">{exp.department}</p>}
                   <p className="text-sm text-muted-foreground mt-2 font-medium">{exp.period}</p>
                 </Card>
               ))}
