@@ -5,6 +5,7 @@ import AchievementsSection from "@/components/AchievementsSection";
 import AffiliationsSection from "@/components/AffiliationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import professorPhoto from "@assets/image_1760342779708.png";
 
 export default function Home() {
   const expertiseAreas = [
@@ -38,6 +39,7 @@ export default function Home() {
           title="Data Scientist & Big Data Analyst"
           department="Department of Computer Science and Engineering"
           institution="R.M.K. Engineering College"
+          photoUrl={professorPhoto}
           email="drsnk730@gmail.com"
           linkedin="https://linkedin.com"
           youtube="https://youtube.com"
