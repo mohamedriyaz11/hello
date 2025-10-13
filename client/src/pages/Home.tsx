@@ -20,14 +20,6 @@ export default function Home() {
     { value: "3", label: "Professional Society Membership", icon: "users" as const },
   ];
 
-  const affiliations = [
-    { name: "University 1" },
-    { name: "University 2" },
-    { name: "University 3" },
-    { name: "University 4" },
-    { name: "University 5" },
-    { name: "University 6" },
-  ];
 
   const contactInfo = {
     address: "No 14 A Manjanman Kovil Street, Kanchipadu, Thiruvalur - 631704",
@@ -52,7 +44,7 @@ export default function Home() {
         />
         <ExpertiseCards expertiseAreas={expertiseAreas} />
         <AchievementsSection achievements={achievements} />
-        <AffiliationsSection affiliations={affiliations} />
+        <AffiliationsSection />
         <ContactSection contactInfo={contactInfo} />
       </main>
       <Footer
