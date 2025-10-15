@@ -316,3 +316,80 @@
     inset: -1px;
   }
 }
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes float-slower {
+  0%, 100% {
+    transform: translateY(0px) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(40px) scale(1.05);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 1s ease-out both;
+}
+
+.animate-fade-up-delayed {
+  animation: fade-up 1.3s ease-out both;
+}
+
+.animate-slide-in {
+  animation: slide-in 1.2s ease-out both;
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slower 14s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 8s ease-in-out infinite;
+}
+@layer utilities {
+  .hover-elevate {
+    @apply transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:border-primary/30;
+  }
+}

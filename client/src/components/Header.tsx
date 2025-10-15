@@ -12,6 +12,8 @@ const navItems = [
   { name: "Opportunities", path: "/opportunities" },
   { name: "Honors", path: "/honors" },
   { name: "Research Topics", path: "/research" },
+  { name: "News", href: "https://sites.google.com/view/snkdir-lab/news?authuser=0" },
+  { name: "Labs", href: "https://sites.google.com/view/snkdir-lab/home?authuser=0" },
 ];
 
 export default function Header() {
@@ -29,20 +31,41 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-1" data-testid="nav-desktop">
-            {navItems.map((item) => (
-              <Link key={item.path} href={item.path} data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                <Button
-                  variant="ghost"
-                  className={`${
-                    location === item.path
-                      ? "bg-secondary"
-                      : ""
-                  }`}
-                >
-                  {item.name}
-                </Button>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isExternal = !!item.href;
+              const linkHref = isExternal ? item.href : item.path;
+
+              if (isExternal) {
+                // External link uses <a> tag
+                return (
+                  <a
+                    key={linkHref}
+                    href={linkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    <Button variant="ghost">{item.name}</Button>
+                  </a>
+                );
+              } else {
+                // Internal link uses Wouter's Link
+                return (
+                  <Link
+                    key={linkHref}
+                    href={linkHref}
+                    data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    <Button
+                      variant="ghost"
+                      className={location === linkHref ? "bg-secondary" : ""}
+                    >
+                      {item.name}
+                    </Button>
+                  </Link>
+                );
+              }
+            })}
           </nav>
 
           <Button
@@ -58,20 +81,43 @@ export default function Header() {
 
         {mobileMenuOpen && (
           <nav className="md:hidden pb-4 space-y-2" data-testid="nav-mobile">
-            {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <Button
-                  variant="ghost"
-                  className={`w-full justify-start ${
-                    location === item.path ? "bg-secondary" : ""
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid={`link-mobile-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                >
-                  {item.name}
-                </Button>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isExternal = !!item.href;
+              const linkHref = isExternal ? item.href : item.path;
+
+              if (isExternal) {
+                return (
+                  <a
+                    key={linkHref}
+                    href={linkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`link-mobile-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Button>
+                  </a>
+                );
+              } else {
+                return (
+                  <Link key={linkHref} href={linkHref}>
+                    <Button
+                      variant="ghost"
+                      className={`w-full justify-start ${location === linkHref ? "bg-secondary" : ""}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      data-testid={`link-mobile-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      {item.name}
+                    </Button>
+                  </Link>
+                );
+              }
+            })}
           </nav>
         )}
       </div>
