@@ -5,7 +5,7 @@ import AchievementsSection from "@/components/AchievementsSection";
 import AffiliationsSection from "@/components/AffiliationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import professorPhoto from "@assets/image.png";
+import professorPhoto from "@assets/imagep.png";
 
 export default function Home() {
   const expertiseAreas = [

@@ -41,7 +41,6 @@ export default function Publications() {
       journal: "Measurement, Vol.183,2021",
       doi: "10.1016/j.measurement.2021.109804"
     },
-    // Add more publications as needed
     {
       number: 6,
       authors: "Kavitha, T., Mathai, P.P., Karthikeyan, C. et al.",
@@ -91,6 +90,62 @@ export default function Publications() {
       journal: "IEEE Transactions on Industrial Informatics, vol. 18, no. 7, pp. 4884-4892, July 2022",
       doi: "10.1109/TII.2021.3138915."
     },
+    {
+      number: 13,
+      authors: "Subramani, Neelakandan, Prakash Mohan, Youseef Alotaibi, Saleh Alghamdi, and Osamah I. Khalaf. 2022",
+      title: "An Efficient Metaheuristic-Based Clustering with Routing Protocol for Underwater Wireless Sensor Networks Sensors ",
+      journal: " 22, no. 2: 415",
+      doi: "10.3390/s22020415"
+    },
+    {
+      number: 14,
+      authors: "Gurram Sunitha, K. Geetha, S. Neelakandan, Aditya Kumar Singh Pundir, S. Hemalatha, Vinay Kumar",
+      title: "Intelligent deep learning-based Clustring and classification using facial images, Image and Vision Computing",
+      journal: "Vol. 121,2022",
+      doi: "10.1016/j.imavis.2022.104404"
+    },
+    {
+      number: 15,
+      authors: "Mohan.P, Subramani, N.; Alotaibi, Y.; Alghamdi, S.; Khalaf, O.I.; Ulaganathan, S.",
+      title: "Improved Metaheuristics-Based Clustering with Multihop Routing Protocol for Underwater Wireless Sensor Networks",
+      journal: "Sensors 2022, 22, 1618.",
+      doi: "10.3390/s22041618"
+    },
+    {
+      number: 16,
+      authors: "Harinder Singh, D. Ramya, R. Saravanakumar, Nayani Sateesh, Rohit Anand, Swarnjit Singh, S. Neelakandan",
+      title: "Artificial intelligence based quality of transmission predictive model for cognitive optical networks",
+      journal: "Optik, Vol. 257, 2022",
+      doi: "10.1016/j.ijleo.2022.168789"
+    },
+    {
+      number: 17,
+      authors: "Anuradha, D.; Subramani, N.; Khalaf, O.I.; Alotaibi, Y.; Alghamdi, S.; Rajagopal, M.",
+      title: "Chaotic Search-and-Rescue-Optimization-Based Multi-Hop Data Transmission Protocol for Underwater Wireless Sensor Networks.",
+      journal: "Sensors 2022, 22, 2867.",
+      doi: "0.3390/s22082867"
+    },
+    {
+      number: 18,
+      authors: "B.T. Geetha, P. Santhosh Kumar, B. Sathya Bama, S. Neelakandan, Chiranjit Dutta, D. Vijendra Babu.",
+      title: "Green energy aware and cluster-based communication for future load prediction in IoT, Sustainable Energy Technologies and Assessments",
+      journal: "Vol.52,2022,102244",
+      doi: "10.1016/j.seta.2022.102244"
+    },
+    {
+      number: 19,
+      authors: "A. Harshavardhan, Prasanthi Boyapati, S. Neelakandan, Alhassan Alolo Abdul-Rasheed Akeji, Aditya Kumar Singh Pundir, Ranjan Walia.",
+      title: "LSGDM with Biogeography-Based Optimization (BBO) Model for Healthcare Applications, Journal of Healthcare Engineering.",
+      journal: "vol. 2022, Article ID 2170839, 11 pages, 2022. ",
+      doi: "10.1155/2022/2170839"
+    },
+    {
+      number: 20,
+      authors: "S. Parthiban, A. Harshavardhan, S. Neelakandan, Vempaty Prashanthi, Abdul-Rasheed Akeji Alhassan Alolo, S. Velmurugan, Chaotic Salp Swarm.",
+      title: "Optimization-Based Energy-Aware VMP Technique for Cloud Data Centers, Computational Intelligence and Neuroscience.",
+      journal: "vol. 2022, Article ID 4343476, 9 pages, 2022.",
+      doi: "10.1155/2022/4343476"
+    },
   ];
 
   // Helper to get a valid DOI link
@@ -103,29 +158,33 @@ export default function Publications() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-r from-indigo-50 via-white to-pink-50">
       <Header />
       <main className="flex-1">
         <div className="container mx-auto px-4 lg:px-8 py-16">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4" data-testid="text-publications-heading">
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600" data-testid="text-publications-heading">
             Publications
           </h1>
-          <p className="text-lg text-muted-foreground mb-12">
+          <p className="text-lg text-muted-foreground mb-12 italic tracking-wide">
             SCI/SCIE Indexed - ARTICLES
           </p>
           <div className="space-y-8">
             {publications.map((pub, idx) => (
-              <Card key={idx} className="p-6 hover-elevate flex flex-col" data-testid={`card-publication-${idx}`}>
+              <Card 
+                key={idx} 
+                className="p-6 hover-elevate flex flex-col bg-gradient-to-r from-white via-purple-50 to-white border border-purple-200 shadow-lg hover:shadow-2xl transition-shadow duration-500 rounded-xl transform hover:-translate-y-1" 
+                data-testid={`card-publication-${idx}`}
+              >
                 <div className="flex flex-col justify-center">
-                  <div className="mb-2 font-semibold">
+                  <div className="mb-2 font-semibold text-purple-900 hover:text-purple-700 transition-colors duration-300 cursor-default">
                     {pub.number}) <span className="font-bold">{pub.authors}</span>, {pub.title}
                   </div>
-                  <div className="mb-2 text-muted-foreground">{pub.journal}</div>
+                  <div className="mb-2 text-muted-foreground font-mono">{pub.journal}</div>
                   <Button
                     asChild
                     variant="outline"
                     size="sm"
-                    className="gap-2 w-fit"
+                    className="gap-2 w-fit border-purple-500 hover:bg-purple-100 text-purple-700 hover:text-purple-900 transition-colors duration-300"
                     data-testid={`button-doi-${idx}`}
                   >
                     <a href={getDoiLink(pub.doi)} target="_blank" rel="noopener noreferrer">

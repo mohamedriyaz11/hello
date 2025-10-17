@@ -20,7 +20,7 @@ export default function People() {
       logo: p1,
     },
     {
-      name: "Research Scholar 2",
+      name: "Ms. Indhumathi.C",
       role: "Ph.D. Candidate",
       area: "Data Science & Analytics",
       email: "indhumathi@example.com",
@@ -28,7 +28,7 @@ export default function People() {
       logo: p2,
     },
     {
-      name: "Research Scholar 3",
+      name: "Mr. Premkumar.R",
       role: "M.E. Student",
       area: "Cloud Computing",
       email: "premkumar@example.com",

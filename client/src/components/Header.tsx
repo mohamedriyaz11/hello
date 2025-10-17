@@ -12,8 +12,8 @@ const navItems = [
   { name: "Opportunities", path: "/opportunities" },
   { name: "Honors", path: "/honors" },
   { name: "Research Topics", path: "/research" },
-  { name: "News", href: "https://sites.google.com/view/snkdir-lab/news?authuser=0" },
-  { name: "Labs", href: "https://sites.google.com/view/snkdir-lab/home?authuser=0" },
+  { name: "News", path: "/news" },
+  { name: "Labs", path: "/labs" },
 ];
 
 export default function Header() {

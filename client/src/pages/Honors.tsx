@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-
+import a1 from "@assets/a1.png";
+import a2 from "@assets/a2.png";
+import a3 from "@assets/a3.png";
 export default function Honors() {
   const honors = [
     {
@@ -107,9 +109,9 @@ export default function Honors() {
   // --- AWARDS IMAGE SECTION ---
   // Normally, map award images from a dedicated images list. For demo, repeat the attached image.
   const awardImages = [
-    "/path/to/your/awardcert1.jpg", // Replace with your actual imported/image path
-    "/path/to/your/awardcert1.jpg",
-    "/path/to/your/awardcert1.jpg"
+    a1, // Replace with your actual imported/image path
+    a2,
+    a3
   ];
   // If using next.js, consider: import award1 from '../public/path.jpg' and use award1 in the array
 
