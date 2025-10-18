@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,7 +56,7 @@ export default function Projects() {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Header />
+        {/* <Header /> */}
         <main className="flex-1">
           <div className="container mx-auto px-4 lg:px-8 py-16">
             <h1 className="text-4xl lg:text-5xl font-bold mb-4" data-testid="text-projects-heading">

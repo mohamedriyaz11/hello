@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Database, Brain, Cloud, LineChart } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 interface ExpertiseItem {
   name: string;
@@ -19,16 +20,37 @@ const iconMap = {
   chart: LineChart,
 };
 
-export default function ExpertiseCards({ expertiseAreas }: ExpertiseCardsProps) {
-  const [animated, setAnimated] = useState(false);
+function AnimatedCounter({ value, shouldAnimate }: { value: number, shouldAnimate: boolean }) {
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => setAnimated(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
+    if (shouldAnimate) {
+      let start = 0;
+      const duration = 1000;
+      const startTime = performance.now();
+
+      function animate(now: number) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        setCount(Math.round(progress * value));
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    // Do NOT reset to 0 when shouldAnimate goes false
+    // Retain animated final value after first animation
+  }, [value, shouldAnimate]);
+
+  return <span>{count}</span>;
+}
+
+export default function ExpertiseCards({ expertiseAreas }: ExpertiseCardsProps) {
+  // CHANGED: Only animate once (first time cards enter viewport)
+  const { ref, inView } = useInView({ threshold: 0.4, triggerOnce: true });
 
   return (
-    <section className="py-16">
+    <section className="py-16" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8">
         <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12" data-testid="text-expertise-heading">
         </h2>
@@ -46,7 +68,7 @@ export default function ExpertiseCards({ expertiseAreas }: ExpertiseCardsProps) 
                     <Icon className="h-8 w-8 text-primary" />
                   </div>
                   <div className="text-4xl font-bold font-mono text-primary" data-testid={`text-percentage-${index}`}>
-                    {animated ? area.percentage : 0}%
+                    <AnimatedCounter value={area.percentage} shouldAnimate={inView} />%
                   </div>
                   <div className="text-sm font-medium" data-testid={`text-expertise-name-${index}`}>
                     {area.name}
@@ -54,7 +76,7 @@ export default function ExpertiseCards({ expertiseAreas }: ExpertiseCardsProps) 
                   <div className="w-full bg-secondary rounded-full h-2">
                     <div
                       className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: animated ? `${area.percentage}%` : '0%' }}
+                      style={{ width: inView ? `${area.percentage}%` : '0%' }}
                     />
                   </div>
                 </div>

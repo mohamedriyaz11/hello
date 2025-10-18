@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Briefcase } from "lucide-react";
@@ -150,7 +150,7 @@ export default function Academics() {
     <div className="relative min-h-screen flex flex-col bg-gradient-to-br from-purple-50 via-white to-blue-100 overflow-hidden">
       {/* Decorative blobs... unchanged */}
       <div className="relative z-10">
-        <Header />
+        {/* <Header /> */}
         <main className="flex-1">
           <div className="container mx-auto px-4 lg:px-8 py-16 relative">
             <h1 className="text-5xl font-extrabold mb-14 text-center tracking-tight bg-gradient-to-r from-purple-700 via-fuchsia-500 to-blue-400 bg-clip-text text-transparent animate-gradient"

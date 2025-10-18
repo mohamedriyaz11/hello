@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -60,7 +60,7 @@ export default function Research() {
         }
       `}</style>
       <div className="min-h-screen flex flex-col vibrant-bg">
-        <Header />
+        {/* <Header /> */}
         <main className="flex-1 bg-white bg-opacity-90 backdrop-blur-sm">
           <div className="container mx-auto px-4 lg:px-8 py-16">
             <h1

@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -56,7 +56,7 @@ export default function People() {
 
       {/* Main Content Layer */}
       <div className="relative z-10">
-        <Header />
+        {/* <Header /> */}
         <main className="flex-1">
           <div className="container mx-auto px-4 lg:px-8 py-16">
             <h1

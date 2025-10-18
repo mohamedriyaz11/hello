@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import a1 from "@assets/a1.png";
@@ -117,7 +117,7 @@ export default function Honors() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-tr from-purple-200 via-pink-100 to-yellow-50 dark:from-purple-950 dark:to-gray-900 overflow-x-hidden font-sans">
-      <Header />
+      {/* <Header /> */}
       <main className="flex-1">
         <div className="container mx-auto px-4 lg:px-8 py-14">
           {/* Honors Section */}

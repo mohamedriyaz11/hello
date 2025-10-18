@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -159,7 +159,7 @@ export default function Publications() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-r from-indigo-50 via-white to-pink-50">
-      <Header />
+      {/* <Header /> */}
       <main className="flex-1">
         <div className="container mx-auto px-4 lg:px-8 py-16">
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600" data-testid="text-publications-heading">
